@@ -1,0 +1,15 @@
+# USE ONLY FOR DEVELOPMENT
+version: '3'
+services:
+  bandersnatch:
+    build: .
+    # SET ENV'S
+    environment:
+      - NODE_ENV=development
+      - ENVIRONMENT=development
+    # NO CHANGES HERE REQUIRED
+    tty: true
+    volumes:
+      - .:/app
+    working_dir: /app
+    # command: npm run dev

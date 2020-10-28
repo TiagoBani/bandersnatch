@@ -24,6 +24,10 @@ RUN ./configure --use-zlib=no && \
 
 FROM node:14.15-alpine3.12
 
+RUN apk update && \
+    apk add --no-cache \
+        ffmpeg 
+
 WORKDIR /app
 
 COPY --from=gpac_builder /app/gpac-master/install/lib /usr/lib

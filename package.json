@@ -2,5 +2,19 @@
   "name": "bandersnatch",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "assets": "yarn http-server --cors -p 8081 assets/",
+    "dev": "yarn http-server --cors -p 8080 public/"
+  },
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "eslint-config-standard": "^15.0.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.2",
+    "http-server": "^0.12.3"
+  },
+  "dependencies": {}
 }

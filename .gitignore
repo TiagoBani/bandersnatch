@@ -1,3 +1,6 @@
+assets/timeline
+!assets/timeline/*.mp4
+
 # Logs
 logs
 *.log

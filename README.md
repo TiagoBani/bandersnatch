@@ -1,4 +1,4 @@
-# Projeto base da JS Expert Week
+# Projeto da JS Expert Week 01
 
 - Acesse o [index](./public/index/index.html) para visualizar a lista de titulos
 - Acesse o [bandersnatch](./public/bandersnatch/index.html) para acessar o titulo base do projeto
@@ -10,6 +10,26 @@
 ## Vídeo
 
 ![titulos](./prints/demo.png)
+
+## Comandos
+
+### Exibir codecs de audio e video
+
+```bash
+docker-compose exec bandersnatch MP4Box -info assets/timeline/01.intro-1920x1080.mp4
+```
+
+### Iniciar a cnd de imagens
+
+```bash
+docker-compose exec bandersnatch yarn assets
+```
+
+### Iniciar a api web de processamento de imagens
+
+```bash
+docker-compose exec bandersnatch yarn dev
+```
 
 ## Problemas possiveis
 

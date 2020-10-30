@@ -1,0 +1,8 @@
+component: website
+name: bandersnatch-assets
+stage: dev
+inputs:
+    src:
+        src: .
+provider:
+    name: aws

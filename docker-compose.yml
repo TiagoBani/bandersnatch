@@ -1,18 +1,36 @@
 # USE ONLY FOR DEVELOPMENT
-version: '3'
+version: '3.5'
+
+x-services-volume:
+  &services-volume
+  type: bind
+  source: ./
+  target: /app
+
 services:
-  bandersnatch:
+  # convert files in new resolutions and stop
+  mp4box:
     build: .
-    # SET ENV'S
-    environment:
-      - NODE_ENV=development
-      - ENVIRONMENT=development
     # NO CHANGES HERE REQUIRED
     tty: true
     volumes:
-      - .:/app
+      - *services-volume
     working_dir: /app
+
+  server:
+    image: node:14.15-alpine3.12
+    working_dir: /app
+    volumes:
+      - *services-volume
     ports:
       - 8080:8080
+    command: yarn dev
+  # cnd static
+  assets:
+    image: node:14.15-alpine3.12
+    working_dir: /app
+    volumes:
+      - *services-volume
+    ports:
       - 8081:8081
-    # command: npm run dev
+    command: yarn assets

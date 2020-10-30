@@ -26,9 +26,11 @@ FROM node:14.15-alpine3.12
 
 RUN apk update && \
     apk add --no-cache \
-        ffmpeg 
+        ffmpeg
 
 WORKDIR /app
 
 COPY --from=gpac_builder /app/gpac-master/install/lib /usr/lib
 COPY --from=gpac_builder /app/gpac-master/install/bin /usr/bin
+
+CMD [ "./script.sh" ]

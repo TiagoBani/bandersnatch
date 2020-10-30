@@ -19,7 +19,7 @@
 docker-compose exec bandersnatch MP4Box -info assets/timeline/01.intro-1920x1080.mp4
 ```
 
-### Iniciar a cnd de imagens
+### Iniciar a cdn de imagens
 
 ```bash
 docker-compose exec bandersnatch yarn assets
@@ -29,6 +29,26 @@ docker-compose exec bandersnatch yarn assets
 
 ```bash
 docker-compose exec bandersnatch yarn dev
+```
+
+### Publicar as aplicações como serverless na aws lambda
+
+#### assets
+
+```bash
+yarn publish:assets
+```
+
+#### server
+
+```bash
+yarn publish:server
+```
+
+#### all
+
+```bash
+yarn publish:bandersnatch
 ```
 
 ## Problemas possiveis

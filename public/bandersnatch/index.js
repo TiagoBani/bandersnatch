@@ -11,11 +11,13 @@ async function main () {
 
   const network = new Network({ host })
   const videoPlayer = new VideoPlayer({
-    manifestJSON, network
+    manifestJSON, network, videoComponent
   })
 
   videoPlayer.inicializeCodec()
   videoComponent.inicializePlayer()
+
+  window.nextChunk = data => videoPlayer.nextChunk(data)
 }
 
 window.onload = main
